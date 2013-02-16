@@ -250,13 +250,12 @@ body {
 		}
 
 .slot_main {
-	padding: 1em 0em 6em 1em;
+	padding: 1em 0em 6em 0em;
 }
 
 	.slot_main .slot_main_menu {
-		height: 20em;
-		width: 12em;
-		margin: 0px;
+		width: 14em;
+		margin: 0em 0em 2em 0em;
 		padding: 0px;
 		float: left;
 		clear: none;
@@ -264,8 +263,7 @@ body {
 	}
 
 	.slot_main .slot_default {
-		height: 5em;
-		margin: 0em 2em 0em 14em;
+		margin: 0em 2em 2em 16em;
 		float: none;
 		clear: none;
 		width: auto;
@@ -289,6 +287,62 @@ body {
 }
 
 	.slot_footer div {
+		font-size: 85%;
+	}
+
+
+/**********************************************************************************
+ * Main menu
+ */
+
+.slot_main_menu .menu {
+	margin: 1em 0em;
+}
+
+.slot_main_menu .menu,
+.slot_main_menu .menu ul,
+.slot_main_menu .menu li {
+	padding: 0px;
+	display: block;
+	list-style: none;
+}
+
+	.slot_main_menu .menu a,
+	.slot_main_menu .menu span {
+		display: block;
+		text-decoration: none;
+		color: #000;
+		padding: 0.2em 1em;
+	}
+
+	.slot_main_menu .menu li.active > a,
+	.slot_main_menu .menu li.active > span {
+		background: #eee;
+	}
+
+	.slot_main_menu .menu > li.has_children {
+		margin: 0.6em 0em;
+	}
+
+		.slot_main_menu .menu > li.has_children > a,
+		.slot_main_menu .menu > li.has_children > span {
+			color: #888;
+			font-weight: bold;
+			font-variant: small-caps;
+		}
+
+	.slot_main_menu .menu li li a,
+	.slot_main_menu .menu li li span {
+		padding-left: 2em;
+	}
+
+	.slot_main_menu .menu li li ul {
+		margin-bottom: 0.4em;
+	}
+
+	.slot_main_menu .menu li li li a,
+	.slot_main_menu .menu li li li span {
+		padding-left: 4em;
 		font-size: 85%;
 	}
 
