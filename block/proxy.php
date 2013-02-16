@@ -48,7 +48,6 @@ class B_admin__proxy extends Block
 		$config = $this->in('config');
 		$path = $this->in('path');
 
-		$this->out('main_menu', $config['main_menu']);
 
 		if (!is_array($path)) {
 			$path = explode('/', rtrim($path, '/'));
@@ -57,9 +56,36 @@ class B_admin__proxy extends Block
 
 		if ($route !== false) {
 			$ok = $this->cascadeAdd('main', $route['block'], true, $route['connections']);
+			if (!empty($route['outputs'])) {
+				$this->outAll($route['outputs']);
+			}
 			$this->out('done', $ok);
 		}
 
+		$this->sortMenu($config['main_menu']);
+
+		$this->out('main_menu', $config['main_menu']);
+	}
+
+
+	protected function sortMenu(& $menu)
+	{
+		uasort($menu, function($a, $b) {
+				$wa = empty($a['weight']) ? 50 : $a['weight'];
+				$wb = empty($b['weight']) ? 50 : $b['weight'];
+
+				if ($wa == $wb) {
+					return strcoll($a['title'], $b['title']);
+				} else {
+					return $wa - $wb;
+				}
+			});
+
+		foreach ($menu as & $item) {
+			if (!empty($item['children'])) {
+				$this->sortMenu($item['children']);
+			}
+		}
 	}
 
 
@@ -83,7 +109,7 @@ class B_admin__proxy extends Block
 					$args[$a] = $path[$i];
 				} else if ($i == count($m) - 1 && $m[$i] == '**') {
 					// last part is '**' -- copy tail and finish
-					$args['path_tail'] = array_slice($path, $i);
+					$args['outputs']['path_tail'] = array_slice($path, $i);
 					$i = count($m);
 					break;
 				} else if ($m[$i] != $path[$i]) {

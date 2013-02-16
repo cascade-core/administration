@@ -270,6 +270,18 @@ body {
 		z-index: 100;
 	}
 
+		.slot_main .left_column {
+			float: left;
+			width: 49%;
+			overflow: hidden;
+		}
+
+		.slot_main .right_column {
+			float: right;
+			width: 49%;
+			overflow: hidden;
+		}
+
 .slot_footer {
 	position: absolute;
 	bottom: 0px;
