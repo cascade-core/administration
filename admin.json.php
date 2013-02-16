@@ -8,6 +8,7 @@
 		},
 		"devel": {
 			"title": "Development",
+			"weight": 80,
 			"children": {
 				"doc": {
 					"title": "Documentation",
