@@ -53,6 +53,12 @@
 			"connections": {
 				"block": ["parent", "path_tail"]
 			}
+		},
+		"/devel/doc/everything": {
+			"title": "Documentation",
+			"block": "core/devel/doc/everything",
+			"connections": {
+			}
 		}
 	}
 }
