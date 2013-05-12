@@ -1,19 +1,20 @@
 {
 	"_": "<?php printf('_%c%c}%c',34,10,10);__halt_compiler();?>",
 	"main_menu": {
-		"dashboard": {
-			"title": "Dashboard",
-			"link": "/admin",
-			"weight": 10
+		"documentation": {
+			"title": "Documentation",
+			"weight": 70,
+			"children": {
+				"profiler": {
+					"title": "Block reference",
+					"link": "/admin/doc/block"
+				}
+			}
 		},
 		"devel": {
 			"title": "Development",
 			"weight": 80,
 			"children": {
-				"doc": {
-					"title": "Documentation",
-					"link": "/admin/devel/doc"
-				},
 				"profiler": {
 					"title": "Profiler statistics",
 					"link": "/admin/devel/profiler",
@@ -40,21 +41,21 @@
 			"connections": {
 			}
 		},
-		"/devel/doc": {
+		"/doc/block": {
 			"title": "Documentation index",
 			"block": "core/devel/doc/index",
 			"connections": {
-				"link": "/admin/devel/doc/block/{block}"
+				"link": "/admin/doc/block/{block}"
 			}
 		},
-		"/devel/doc/block/**": {
+		"/doc/block/**": {
 			"title": "Documentation",
 			"block": "core/devel/doc/show",
 			"connections": {
 				"block": ["parent", "path_tail"]
 			}
 		},
-		"/devel/doc/everything": {
+		"/doc/everything": {
 			"title": "Documentation",
 			"block": "core/devel/doc/everything",
 			"connections": {

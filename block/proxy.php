@@ -48,23 +48,34 @@ class B_admin__proxy extends Block
 		$config = $this->in('config');
 		$path = $this->in('path');
 
+		// Prepare reverse router
+		$this->context->getTemplateEngine()->addReverseRouter(array($this, 'getUrl'));
 
+		// Route current request
 		if (!is_array($path)) {
 			$path = explode('/', rtrim($path, '/'));
 		}
 		$route = $this->route($config['routes'], $path);
-
 		if ($route !== false) {
-			$ok = $this->cascadeAdd('main', $route['block'], true, $route['connections']);
+			$ok = $this->cascadeAdd('main', $route['block'], true, (array) @ $route['connections']);
 			if (!empty($route['outputs'])) {
 				$this->outAll($route['outputs']);
 			}
 			$this->out('done', $ok);
 		}
 
+		// Prepare main menu
 		$this->sortMenu($config['main_menu']);
-
 		$this->out('main_menu', $config['main_menu']);
+	}
+
+
+	/**
+	 * Reverse router
+	 */
+	public function getUrl($route, $values)
+	{
+		// Todo
 	}
 
 
@@ -75,7 +86,7 @@ class B_admin__proxy extends Block
 				$wb = empty($b['weight']) ? 50 : $b['weight'];
 
 				if ($wa == $wb) {
-					return strcoll($a['title'], $b['title']);
+					return strcoll(@$a['title'], @$b['title']);
 				} else {
 					return $wa - $wb;
 				}
