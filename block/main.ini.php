@@ -65,7 +65,7 @@ name = "page_holder"
 .block = "git/version"
 .x = 469
 .y = 387
-link = "/admin/version"
+link = "/admin/devel/version"
 slot[] = "slot_main_menu_underlay:name"
 slot_weight = "80"
 
