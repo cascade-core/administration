@@ -29,6 +29,13 @@
 		}
 	},
 	"routes": {
+		"/": {
+			"title": "Administration",
+			"block": "core/out/placeholder",
+			"connections": {
+				"label": "Here should be a dashboard, but it is not installed."
+			}
+		},
 		"/devel/version": {
 			"title": "Application and plugin versions",
 			"block": "admin/page/version",
