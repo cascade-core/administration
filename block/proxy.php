@@ -117,7 +117,7 @@ class B_admin__proxy extends Block
 				if (@$m[$i][0] == '$') {
 					// variable - match anything
 					$a = substr($m[$i], 1);
-					$args[$a] = $path[$i];
+					$args['outputs'][$a] = $path[$i];
 				} else if ($i == count($m) - 1 && $m[$i] == '**') {
 					// last part is '**' -- copy tail and finish
 					$args['outputs']['path_tail'] = array_slice($path, $i);
