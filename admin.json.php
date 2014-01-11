@@ -1,6 +1,11 @@
 {
 	"_": "<?php printf('_%c%c}%c',34,10,10);__halt_compiler();?>",
 	"main_menu": {
+                "dashboard": {
+                        "title": "Dashboard",
+                        "link": "/admin",
+                        "weight": 10
+                },
 		"documentation": {
 			"title": "Documentation",
 			"weight": 70,
