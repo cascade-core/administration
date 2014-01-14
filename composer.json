@@ -2,7 +2,7 @@
 	"name": "cascade/admin",
 	"type": "cascade-plugin",
 	"description": "Administration infrastructure",
-	"license": "BSD-3-Clause",
+	"license": "Apache-2.0",
 	"authors": [
 		{
 			"name": "Josef Kufner",
