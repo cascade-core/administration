@@ -16,7 +16,7 @@
  *
  */
 
-class B_admin__proxy extends Block
+class B_admin__proxy extends \Cascade\Core\Block
 {
 
 	protected $inputs = array(
