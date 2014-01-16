@@ -13,7 +13,7 @@
 		"plugin": "admin"
 	},
 	"require": {
-		"cascade/composer-plugin": "dev-master"
+		"cascade/composer-plugin": ">=1.1"
 	}
 }
 
