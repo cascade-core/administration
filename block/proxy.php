@@ -20,6 +20,11 @@ class B_admin__proxy extends \Cascade\Core\Block
 {
 
 	protected $inputs = array(
+		'config' => null,
+		'path' => null,
+	);
+
+	protected $connections = array(
 		'config' => array('config', 'admin'),
 		'path' => array('router', 'path_tail'),
 	);
