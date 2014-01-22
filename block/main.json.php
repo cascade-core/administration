@@ -80,9 +80,9 @@
                 ]
             },
             "in_val": {
-                "data": "<!-- html head -->\n<link rel='stylesheet' href='/core/style/basic.css' type='text/css'>\n<link rel='stylesheet' href='/plugin/admin/style/main.css' type='text/css'>\n",
                 "slot": "html_head",
-                "slot_weight": 20
+                "slot_weight": 20,
+                "data": "<!-- html head -->\n<link rel='stylesheet' href='/core/style/basic.css' type='text/css'>\n<link rel='stylesheet' href='/plugin/admin/style/main.css' type='text/css'>\n"
             }
         },
         "slot_holder": {
@@ -147,7 +147,7 @@
             "in_val": {
                 "level": 1,
                 "text": "Administration",
-                "link": "/admin",
+                "link": "/",
                 "slot_weight": 10
             },
             "in_con": {
