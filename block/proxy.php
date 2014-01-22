@@ -50,7 +50,7 @@ class B_admin__proxy extends \Cascade\Core\Block
 		}
 		$route = $this->route($config['routes'], $path);
 		if ($route !== false) {
-			$ok = $this->cascadeAdd('main', $route['block'], true, (array) @ $route['connections']);
+			$ok = $this->cascadeAdd('main', $route['block'], true, (array) @ $route['in_con'], (array) @ $route['in_val']);
 			if (!empty($route['outputs'])) {
 				$this->outAll($route['outputs']);
 			}
