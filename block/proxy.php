@@ -60,6 +60,11 @@ class B_admin__proxy extends \Cascade\Core\Block
 		// Prepare main menu
 		$this->sortMenu($config['main_menu']);
 		$this->out('main_menu', $config['main_menu']);
+
+		// Add common block (application specific extension)
+		if (!empty($config['common_block'])) {
+			$this->cascadeAdd('common', $config['common_block'], true);
+		}
 	}
 
 
