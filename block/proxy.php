@@ -42,7 +42,7 @@ class B_admin__proxy extends \Cascade\Core\Block
 		$path = $this->in('path');
 
 		// Prepare reverse router
-		$this->context->getTemplateEngine()->addReverseRouter(array($this, 'getUrl'));
+		$this->context->template_engine->addReverseRouter(array($this, 'getUrl'));
 
 		// Route current request
 		if (!is_array($path)) {
