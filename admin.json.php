@@ -10,9 +10,13 @@
             "title": "Documentation",
             "weight": 70,
             "children": {
-                "profiler": {
+                "block_ref": {
                     "title": "Block reference",
                     "link": "/admin/doc/block"
+                },
+                "doxygen": {
+                    "title": "Doxygen docs",
+                    "link": "/admin/doc/doxygen"
                 }
             }
         },
@@ -69,6 +73,10 @@
         "/doc/everything": {
             "title": "Documentation",
             "block": "core/devel/doc/everything"
+        },
+        "/doc/doxygen": {
+            "title": "Doxygen Documentation",
+            "block": "admin/page/doxygen"
         }
     }
 }
