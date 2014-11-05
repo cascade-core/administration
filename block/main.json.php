@@ -96,7 +96,7 @@
             }
         },
         "footer_version": {
-            "block": "git/version",
+            "block": "core/devel/version",
             "x": 469,
             "y": 387,
             "in_val": {
