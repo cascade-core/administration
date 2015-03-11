@@ -145,7 +145,7 @@ body {
 .slot_page_holder {
 	width: auto !important;
 	width: 960px;
-	max-width: 960px;
+	max-width: 95%; /* leave some small margin */
 	min-width: 720px;
 	position: relative;
 
