@@ -59,6 +59,16 @@ class B_admin__scan_doxygen_doc extends \Cascade\Core\Block
 			}
 		}
 
+		// Libraries
+		foreach (glob(DIR_ROOT."/lib/cascade/*/") as $lib) {
+                        if (file_exists($lib.'/'.$relative_index_file)) {
+				$menu[] = array(
+					'title' => sprintf(_('Library: %s'), basename($lib)),
+					'link' => preg_replace("\xfe^".DIR_ROOT."\xfe", "", $lib).'/'.$relative_index_file,
+				);
+			}
+		}
+
 		$this->out('menu', $menu);
 		$this->out('done', !empty($menu));
 	}
